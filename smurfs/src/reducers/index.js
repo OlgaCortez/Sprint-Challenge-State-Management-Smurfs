@@ -17,15 +17,16 @@ const reducer = (state = initialState, action) => {
         case FETCH_SUCCESS:
             return {
                 ...state,
+                smurfs: action.payload,
                 isFetching: false,
-                error: '',
-                smurfs: action.payload
+                error: ''
+                
             };
         case FETCH_FAILURE:
             return {
                 ...state,
-                error: action.payload,
-                isFetching: false
+                isFetching: false,
+                error: action.payload
             };
         default:
             return state;
